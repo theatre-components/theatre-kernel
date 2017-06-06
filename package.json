@@ -1,0 +1,39 @@
+{
+  "name": "theatre-kernel",
+  "version": "0.0.1",
+  "description": "A singular kernel for runing a process on top of Inversify",
+  "main": "dist/current/src/index.js",
+  "scripts": {
+    "start": "concurrently 'npm run typescript:watch' 'npm run test:watch'",
+    "test": "JASMINE_CONFIG_PATH=./jasmine.json jasmine || true",
+    "test:watch": "nodemon -w dist/current/spec/index-spec.js --exec 'npm run test'",
+    "typescript": "tsc --pretty || true",
+    "typescript:watch": "nodemon -w src -w spec -e ts,tsx,js,jsx --exec 'npm run typescript'",
+    "typescript:production": "tsc --pretty && tsc --pretty --target es6 --outDir dist/next"
+  },
+  "keywords": [
+    "Kernel",
+    "Process",
+    "Inversify",
+    "Runner",
+    "Typescript",
+    "Theatre",
+    "Future"
+  ],
+  "author": "David Jegat <david.jegat@gmail.com>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@types/jasmine": "^2.5.50",
+    "@types/node": "^7.0.24",
+    "concurrently": "^3.4.0",
+    "jasmine": "^2.6.0",
+    "jasmine-spec-reporter": "^4.1.0",
+    "nodemon": "^1.11.0",
+    "typescript": "^2.3.4"
+  },
+  "dependencies": {
+    "inversify": "^4.1.1",
+    "reflect-metadata": "^0.1.10",
+    "theatre-events": "^1.0.6"
+  }
+}
