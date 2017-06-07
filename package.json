@@ -2,8 +2,8 @@
   "name": "theatre-kernel",
   "version": "1.0.0",
   "description": "A singular kernel for runing application process on top of Inversify",
-  "main": "dist/current/src/index.js",
-  "typings": "dist/current/src/index.d.ts",
+  "main": "./dist/current/src/index.js",
+  "typings": "./dist/current/src/index.d.ts",
   "scripts": {
     "start": "concurrently 'npm run typescript:watch' 'npm run test:watch'",
     "test": "JASMINE_CONFIG_PATH=./jasmine.json jasmine || true",

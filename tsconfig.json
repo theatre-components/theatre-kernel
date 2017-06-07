@@ -16,7 +16,8 @@
     "noImplicitReturns": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "rootDir": "./"
   },
   "exclude": [
     "node_modules",
