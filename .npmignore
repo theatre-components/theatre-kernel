@@ -1,0 +1,11 @@
+tsconfig.json
+jasmine.json
+spec
+src
+.publishrc
+.git
+.gitignore
+tags
+*.tags
+circle.yml
+node_modules

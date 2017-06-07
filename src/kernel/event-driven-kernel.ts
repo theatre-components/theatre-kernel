@@ -3,7 +3,7 @@ import {ContainerEvent} from './../events/container-event';
 import {ErrorEvent} from './../events/error-event';
 import {ExtensionEvent} from './../events/extension-event';
 import {ApplicationEvent} from './../events/application-event';
-import {EventDispatcher, AsynchronousEventDispatcher} from 'theatre-events';
+import {EventDispatcher, AsynchronousEventDispatcher, EventListener} from 'theatre-events';
 import {interfaces, Container, decorate, injectable} from 'inversify';
 import {Application} from './../application'
 import {Kernel} from './../kernel';
@@ -215,6 +215,14 @@ export class EventDrivenKernel implements Kernel
                 this.extensions.delete(i);
             }
         });
+    }
+
+    /**
+     * This is a simple shortcuts to attach an error listener
+     */
+    addErrorListener(listener: EventListener): void
+    {
+        this.dispatcher.addEventListener(EventDrivenKernel.ON_ERROR, listener);
     }
 
     get dispatcher(): EventDispatcher
