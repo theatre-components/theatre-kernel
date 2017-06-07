@@ -5,9 +5,8 @@ machine:
 dependencies:
   override:
     - npm install
-    - npm run distribute
 
 test:
   override:
-    - npm test
+    - npm run distribute
 
